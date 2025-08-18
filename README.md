@@ -1,4 +1,6 @@
 # SINDy_VIV
 Sparse Identification of Non-Linear Dynamics (SINDy) is used to identify and discover non-linear dynamics of wake &amp; lift oscillator Vortex Induced Vibration (VIV) systems. 2 Reduced order VIV systems, namely, wake oscillator proposed by Fachinetti [1] (2003) &amp; an older model of lift oscillator proposed by Hartlen &amp; Curie [2] (1970) are studied. 
 
-![1dof FSI of a cylinder mounted elastically]([[https://example.com/plot.png](https://www.researchgate.net/profile/Emmanuel-Fontaine/publication/309126902/figure/fig1/AS:813127859965952@1570876197917/Model-of-1DOF-elastically-supported-rigid-structure-experiencing-VIV.png](https://drive.google.com/file/d/1L4-UNEEYxMkZNvkD5ihPEAizT3C0lzZP/view?usp=sharing)))
+
+
+![1dof FSI of a cylinder mounted elastically](images/plot.png)
