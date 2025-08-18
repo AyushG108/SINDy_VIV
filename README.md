@@ -3,4 +3,4 @@ Sparse Identification of Non-Linear Dynamics (SINDy) is used to identify and dis
 
 
 
-![1dof FSI of a cylinder mounted elastically](images/plot.png)
+![1dof FSI of a cylinder mounted elastically](images/Model-of-1DOF-elastically-supported-rigid-structure-experiencing-VIV.png)
