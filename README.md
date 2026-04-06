@@ -8,11 +8,11 @@ Sparse Identification of Nonlinear Dynamics (SINDy) is used in this project to d
 ### 1. Wake Oscillator Model (Facchinetti et al.)
 
 $$
-y'' + \left(2\xi\delta + \frac{\gamma}{\mu}\right)y' + \delta^2 y = s \quad ---(3)
+y'' + \left(2\xi\delta + \frac{\gamma}{\mu}\right)y' + \delta^2 y = s \quad 
 $$
 
 $$
-q'' + \epsilon(q^2 - 1)q' + q = f \quad ---(4)
+q'' + \epsilon(q^2 - 1)q' + q = f \quad 
 $$
 
 ---
@@ -22,11 +22,11 @@ $$
 The system is:
 
 $$
-x_r'' + 2\zeta x_r' + x_r = a w_0^2 C_L \tag{5}
+x_r'' + 2\zeta x_r' + x_r = a w_0^2 C_L 
 $$
 
 $$
-C_L'' - a w_0 C_L' + \frac{\gamma}{w_0} (C_L')^3 + w_0^2 C_L = b x_r' \tag{6}
+C_L'' - a w_0 C_L' + \frac{\gamma}{w_0} (C_L')^3 + w_0^2 C_L = b x_r' 
 $$
 
 ---
