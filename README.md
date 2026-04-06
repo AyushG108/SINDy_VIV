@@ -7,23 +7,13 @@ Sparse Identification of Nonlinear Dynamics (SINDy) is used in this project to d
 
 ### 1. Wake Oscillator Model (Facchinetti et al.)
 
-The coupled fluid–structure system is given by:
-
 $$
-\ddot{y} + 2\zeta\omega_n\dot{y} + \omega_n^2 y = \frac{F}{m}
+y'' + \left(2\xi\delta + \frac{\gamma}{\mu}\right)y' + \delta^2 y = s \quad ---(3)
 $$
 
 $$
-\ddot{q} + \epsilon(q^2 - 1)\dot{q} + \omega_s^2 q = A\ddot{y}
+q'' + \epsilon(q^2 - 1)q' + q = f \quad ---(4)
 $$
-
-where:
-
-* (y): structural displacement
-* (q): wake variable
-* (\zeta): damping ratio
-* (\omega_n): natural frequency
-* (\epsilon): nonlinear wake parameter
 
 ---
 
@@ -32,114 +22,57 @@ where:
 The system is:
 
 $$
-\dot{x} = v
+x_r'' + 2\zeta x_r' + x_r = a w_0^2 C_L \tag{5}
 $$
 
 $$
-\dot{v} = 2a\omega^2 C_l - x - 2\zeta v
+C_L'' - a w_0 C_L' + \frac{\gamma}{w_0} (C_L')^3 + w_0^2 C_L = b x_r' \tag{6}
 $$
-
-$$
-\dot{C}_l = p
-$$
-
-$$
-\dot{p} = f(C_l, p)
-$$
-
-where (f(C_l, p)) is a nonlinear polynomial representation of lift dynamics.
 
 ---
-
-## 🧠 SINDy Formulation
-
-The identified system is expressed as:
-
-[
-\dot{q} = u
-]
-[
-\dot{u} = f(q, \dot{q})
-]
-
-A candidate library includes:
-
-* Polynomial terms: (q, q^2, q^3)
-* Cross terms: (q \dot{q})
-* Higher-order derivatives: (\dot{q}^2, \dot{q}^3)
-
-Sparse regression selects only the dominant terms.
-
----
-
-## 🔍 Discovered Models (SINDy Results)
+## Discovered Models (SINDy Results)
 
 ### 1. Wake Oscillator (from simulated data)
 
-Identified dynamics:
+$$
+(q)' = -0.0111 - 0.206q + 1.025u + 0.008U_r + 0.082qU_r - 0.013uU_r - 0.002U_r^2 + 0.002q^3 + 0.007q^2u - 0.009u^2 - 0.008qU_r^2 + 0.001uU_r^2
+$$
 
-[
-\dot{q} = u
-]
+$$
 
-[
-\dot{u} = 0.074
+(u)' = -0.0241 + 2.845q - 4.848u + 0.016U_r - 1.223qU_r + 2.059uU_r - 0.003U_r^2 + 0.010q^3 - 0.162q^2u - 0.060qu^2 + 0.090qU_r^2 + 0.026u^3 - 0.209uU_r^2
 
-* 0.400 q
-* 29.462 u
-
-- 0.018 q^2
-
-* 0.005 q u
-* 0.017 u^2
-* 0.002 q^3
-* 0.089 q^2 u
-
-- 0.397 q u^2
-
-* 0.025 u^3
-  ]
-
+$$
 ---
 
 ### 2. Lift Oscillator (from CFD data)
 
-Identified lift dynamics:
+$$
+(C_l)' = 0.239 \, p
+$$
 
-[
-\dot{C_l} = p
-]
+$$
 
-[
-\dot{p} = 0.169 + 0.119 C_l + 1.536 p
+(p)' = 0.169 + 0.119C_l + 1.536p - 0.088C_l^2 - 0.021C_l p - 0.064p^2 - 0.180C_l^3 - 0.769C_l^2 p - 0.180C_l p^2 - 0.766p^3
+$$
 
-* 0.088 C_l^2 - 0.021 C_l p - 0.064 p^2
-* 0.180 C_l^3 - 0.769 C_l^2 p - 0.180 C_l p^2
-* 0.766 p^3
-  ]
-
----
-
-## 📊 CFD-Based Modeling
+where \( p = \dot{C}_l \)
 
 * Lift coefficient (C_l) is obtained from CFD of a static cylinder
 * Time-series data is used directly for system identification
 * No explicit governing equations are assumed
 
-This highlights:
 
-➡️ Physics-based modeling (wake oscillator)
-➡️ Data-driven discovery (CFD + SINDy)
 
 ---
 
-## 🖼️ Physical Model
+## Physical Model
 
 ![1DOF elastically supported cylinder undergoing VIV](Model-of-1DOF-elastically-supported-rigid-structure-experiencing-VIV.png)
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 * `SINDy_wake_oscillator.ipynb` → Wake oscillator + SINDy identification
 * `SINDy_lift_oscillator.ipynb` → Lift oscillator + SINDy identification
@@ -149,7 +82,7 @@ This highlights:
 
 ---
 
-## 🔧 Requirements
+## Requirements
 
 * Python 3.x
 * NumPy
@@ -163,7 +96,7 @@ pip install numpy scipy matplotlib pysindy
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
 git clone https://github.com/<your-username>/SINDy_VIV.git
@@ -178,7 +111,7 @@ Run:
 
 ---
 
-## 📚 References
+## References
 
 [1] Facchinetti, M.L., de Langre, E., Biolley, F. (2004)
 *Coupling of structure and wake oscillators in vortex-induced vibrations*
