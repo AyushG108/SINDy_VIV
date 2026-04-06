@@ -55,6 +55,8 @@ $$
 $$
 
 where $p = \dot{C}_l$
+
+
 * Lift coefficient (C_l) is obtained from CFD of a static cylinder
 * Time-series data is used directly for system identification
 * No explicit governing equations are assumed
