@@ -96,7 +96,7 @@ pip install numpy scipy matplotlib pysindy
 ## How to Run
 
 ```bash
-git clone https://github.com/<your-username>/SINDy_VIV.git
+git clone https://github.com/AyushG108/SINDy_VIV.git
 cd SINDy_VIV
 jupyter notebook
 ```
