@@ -48,16 +48,13 @@ $$
 ### 2. Lift Oscillator (from CFD data)
 
 $$
-(C_l)' = 0.239 \, p
+\begin{cases}
+\dot{C}_l = 0.239 \, p \\[6pt]
+\dot{p} = 0.169 + 0.119C_l + 1.536p - 0.088C_l^2 - 0.021C_l p - 0.064p^2 - 0.180C_l^3 - 0.769C_l^2 p - 0.180C_l p^2 - 0.766p^3
+\end{cases}
 $$
 
-$$
-
-(p)' = 0.169 + 0.119C_l + 1.536p - 0.088C_l^2 - 0.021C_l p - 0.064p^2 - 0.180C_l^3 - 0.769C_l^2 p - 0.180C_l p^2 - 0.766p^3
-$$
-
-where \( p = \dot{C}_l \)
-
+where $p = \dot{C}_l$
 * Lift coefficient (C_l) is obtained from CFD of a static cylinder
 * Time-series data is used directly for system identification
 * No explicit governing equations are assumed
