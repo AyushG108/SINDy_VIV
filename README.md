@@ -2,37 +2,20 @@
 
 Sparse Identification of Nonlinear Dynamics (SINDy) is used in this project to discover governing equations for vortex-induced vibration (VIV) systems. This repository combines **classical reduced-order physics-based models** with **data-driven system identification**.
 
----
 
-## 📌 Overview
-
-This work focuses on two canonical VIV reduced-order models:
-
-* **Wake Oscillator Model** (Facchinetti et al., 2004)
-* **Lift Oscillator Model** (Hartlen & Currie, 1970)
-
-The pipeline is:
-
-1. Solve governing equations using numerical integration
-2. Generate time-series data (wake variable `q`, lift coefficient `C_l`)
-3. Construct nonlinear feature libraries
-4. Apply SINDy to discover governing equations
-
----
-
-## ⚙️ Governing Equations
+## Governing Equations
 
 ### 1. Wake Oscillator Model (Facchinetti et al.)
 
 The coupled fluid–structure system is given by:
 
-[
-\ddot{y} + 2\zeta \omega_n \dot{y} + \omega_n^2 y = \frac{F}{m}
-]
+$$
+\ddot{y} + 2\zeta\omega_n\dot{y} + \omega_n^2 y = \frac{F}{m}
+$$
 
-[
-\ddot{q} + \epsilon (q^2 - 1) \dot{q} + \omega_s^2 q = A \ddot{y}
-]
+$$
+\ddot{q} + \epsilon(q^2 - 1)\dot{q} + \omega_s^2 q = A\ddot{y}
+$$
 
 where:
 
@@ -48,21 +31,21 @@ where:
 
 The system is:
 
-[
+$$
 \dot{x} = v
-]
+$$
 
-[
-\dot{v} = 2 a \omega^2 C_l - x - 2\zeta v
-]
+$$
+\dot{v} = 2a\omega^2 C_l - x - 2\zeta v
+$$
 
-[
-\dot{C_l} = p
-]
+$$
+\dot{C}_l = p
+$$
 
-[
+$$
 \dot{p} = f(C_l, p)
-]
+$$
 
 where (f(C_l, p)) is a nonlinear polynomial representation of lift dynamics.
 
@@ -162,7 +145,7 @@ This highlights:
 * `SINDy_lift_oscillator.ipynb` → Lift oscillator + SINDy identification
 * `wake_oscillator_model.ipynb` → Base wake model
 * `lift_oscillator.ipynb` → Base lift model
-* `CFD_lift_drag_time_series_*` → CFD datasets
+* `CFD_lift_drag_time_series_stable*` → CFD datasets
 
 ---
 
@@ -205,15 +188,3 @@ Run:
 
 ---
 
-## ✨ Future Work
-
-* Physics-informed SINDy
-* Extension to turbulent flows
-* Coupling with PINNs
-* Generative models for flow reconstruction
-
----
-
-## 📬 Notes
-
-This README is written in standard **Markdown format**, so you can directly copy-paste it into your GitHub `README.md` file.
