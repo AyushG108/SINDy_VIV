@@ -4,7 +4,7 @@ Sparse Identification of Nonlinear Dynamics (SINDy) is used in this project to d
 
 ---
 
-## Overview
+## 📌 Overview
 
 This work focuses on two canonical VIV reduced-order models:
 
@@ -68,7 +68,7 @@ where (f(C_l, p)) is a nonlinear polynomial representation of lift dynamics.
 
 ---
 
-## SINDy Formulation
+## 🧠 SINDy Formulation
 
 The identified system is expressed as:
 
@@ -137,7 +137,7 @@ Identified lift dynamics:
 
 ---
 
-## CFD-Based Modeling
+## 📊 CFD-Based Modeling
 
 * Lift coefficient (C_l) is obtained from CFD of a static cylinder
 * Time-series data is used directly for system identification
@@ -150,13 +150,13 @@ This highlights:
 
 ---
 
-## Physical Model
+## 🖼️ Physical Model
 
 ![1DOF elastically supported cylinder undergoing VIV](Model-of-1DOF-elastically-supported-rigid-structure-experiencing-VIV.png)
 
 ---
 
-## Repository Structure
+## 📂 Repository Structure
 
 * `SINDy_wake_oscillator.ipynb` → Wake oscillator + SINDy identification
 * `SINDy_lift_oscillator.ipynb` → Lift oscillator + SINDy identification
@@ -166,7 +166,7 @@ This highlights:
 
 ---
 
-## Requirements
+## 🔧 Requirements
 
 * Python 3.x
 * NumPy
@@ -180,7 +180,7 @@ pip install numpy scipy matplotlib pysindy
 
 ---
 
-## How to Run
+## 🚀 How to Run
 
 ```bash
 git clone https://github.com/<your-username>/SINDy_VIV.git
@@ -195,7 +195,7 @@ Run:
 
 ---
 
-## References
+## 📚 References
 
 [1] Facchinetti, M.L., de Langre, E., Biolley, F. (2004)
 *Coupling of structure and wake oscillators in vortex-induced vibrations*
@@ -205,7 +205,7 @@ Run:
 
 ---
 
-## Future Work
+## ✨ Future Work
 
 * Physics-informed SINDy
 * Extension to turbulent flows
@@ -214,3 +214,6 @@ Run:
 
 ---
 
+## 📬 Notes
+
+This README is written in standard **Markdown format**, so you can directly copy-paste it into your GitHub `README.md` file.
