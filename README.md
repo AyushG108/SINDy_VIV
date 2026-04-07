@@ -1,4 +1,4 @@
-# SINDy_VIV
+# SINDy-VIV
 
 Sparse Identification of Nonlinear Dynamics (SINDy) is used in this project to discover governing equations for vortex-induced vibration (VIV) systems. This repository combines **classical reduced-order physics-based models** with **data-driven system identification**.
 
